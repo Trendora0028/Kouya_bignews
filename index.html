@@ -49,7 +49,60 @@
     }, 500);
 
     function fakeDownload() {
-      const content = "This is a demo file.\n";
+      const content = `This is a demo file.
+
+==================================================
+SECURITY ALERT — UNAUTHORIZED ACCESS LOG
+PRIORITY: CRITICAL
+STATUS: ACTIVE / UNCONTAINED
+==================================================
+
+[00:38:12] Remote session established from UNKNOWN ORIGIN
+[00:38:14] Device fingerprint mismatch detected
+[00:38:17] Privilege escalation attempt SUCCESSFUL
+
+WARNING:
+This activity does NOT match any known user behavior.
+
+The following actions were recorded:
+
+• Apple ID authentication token requested
+• Token fragment cached in volatile memory
+• iCloud backup index enumerated
+• Contacts, photos, and message metadata scanned
+• Location history accessed (last 72 hours)
+• Background screen capture thread initialized
+• Microphone access requested (DENIED)
+• Camera access requested (DENIED)
+
+[00:38:29] Intrusion process renamed itself
+[00:38:31] Log obfuscation routine detected
+[00:38:33] Secondary persistence check FAILED
+[00:38:34] Retrying…
+
+NOTICE:
+If you are reading this message, this file was NOT opened by you.
+
+System integrity can no longer be guaranteed.
+Several indicators suggest the session may still be active.
+
+Do NOT close this file.
+Do NOT restart the device.
+Do NOT enter passwords or biometric data.
+
+Any interruption may trigger automatic log erasure.
+Evidence loss is likely.
+
+A secondary connection attempt is expected.
+Estimated time to next session: UNKNOWN.
+
+ERROR CODE: 0xFA11ED00
+INCIDENT ID: 7f4b-9c1a-2d0e-3e9f
+HOST STATE: COMPROMISED
+
+END OF LOG.
+`;
+
       const blob = new Blob([content], { type: 'text/plain' });
       const url = URL.createObjectURL(blob);
 
@@ -64,3 +117,4 @@
   </script>
 </body>
 </html>
+
